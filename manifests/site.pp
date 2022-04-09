@@ -1,7 +1,3 @@
-node default{
- include role::dev_machine 
-} 
-
-node /slave\d\.puppet/{
+node slave2.puppet {
  include role::web_server
 }
