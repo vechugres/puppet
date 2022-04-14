@@ -28,7 +28,6 @@ node 'slave1.puppet' {
 file {'/etc/httpd/conf.d/static.conf':
   ensure => file,
   source => 'puppet:///modules/static/static.conf',
-  notify => Service['httpd']
  }
 
  service { 'httpd':
@@ -60,7 +59,6 @@ node 'slave2.puppet' {
 file {'/etc/httpd/conf.d/dynamic.conf':
   ensure => file,
   source => 'puppet:///modules/dynamic/dynamic.conf',
-  notify => Service['httpd']
  }
  
  service { 'httpd':
