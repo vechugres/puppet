@@ -1,5 +1,9 @@
 node 'slave1.puppet' {
 
+ package { 'selinux':
+   ensure => absent
+ }
+ 
  package { 'httpd':
   ensure => latest,
  }
@@ -30,6 +34,10 @@ file {'/etc/httpd/conf.d/static.conf':
 }
 
 node 'slave2.puppet' {
+
+ package { 'selinux':
+   ensure => absent
+ }
 
  package { ['httpd','php'] :
   ensure => latest,
