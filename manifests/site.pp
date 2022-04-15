@@ -1,8 +1,6 @@
 node 'slave1.puppet' {
 
- package { 'selinux':
-   ensure => absent
- }
+ include selinux
  
  package { 'httpd':
   ensure => latest,
@@ -35,9 +33,7 @@ file {'/etc/httpd/conf.d/static.conf':
 
 node 'slave2.puppet' {
 
- package { 'selinux':
-   ensure => absent
- }
+ include selinux
 
  package { ['httpd','php'] :
   ensure => latest,
@@ -82,4 +78,9 @@ nginx::resource::server { 'dynamic':
   proxy => 'http://192.168.50.15:80',
   }
   
+}
+
+class { selinux:
+  mode => 'disabled',
+  type => 'targeted',
 }
