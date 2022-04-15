@@ -1,11 +1,11 @@
-node 'slave1' {
+node 'slave1.puppet' {
   include static
   file {'/root/README':
     ensure => absent
     }
 }
 
-node 'slave2' {
+node 'slave2.puppet' {
   include dynamic
   file {'/root/README':
     ensure => absent
