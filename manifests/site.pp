@@ -56,11 +56,11 @@ class static{
   }
   file {'/var/www/html/index.php':
     ensure => file,
-    source => 'puppet:///modules/dynamic/index.php'
+    source => 'puppet:///modules/static/index.php'
   }
   file{'/etc/httpd/conf.d/static.conf':
     ensure => file,
-    source => 'puppet:///modules/dynamic/static.conf',
+    source => 'puppet:///modules/static/static.conf',
     notify => Service['httpd']
   }
   service{'httpd':
