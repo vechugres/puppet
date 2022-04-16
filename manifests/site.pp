@@ -91,7 +91,7 @@ include wget
 
  file {'/etc/systemd/system/minecraft-server.service':
      ensure => file,
-     source => 'puppet:///modules/minecraft-server/',
+     source => 'puppet:///modules/minecraft/minecraft-server.service',
 }
  ~> service { 'minecraft-server':
      ensure => running,
