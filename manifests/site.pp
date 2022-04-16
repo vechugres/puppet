@@ -97,7 +97,6 @@ include selinux
    }
 }
 
-}
 
 node 'master.puppet' {
 
