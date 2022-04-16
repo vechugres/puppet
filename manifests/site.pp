@@ -64,6 +64,12 @@ file {'/etc/httpd/conf.d/dynamic.conf':
  }
 }
 
+node 'minecraft.puppet' {
+
+include selinux
+
+}
+
 node 'master.puppet' {
 
 include nginx
