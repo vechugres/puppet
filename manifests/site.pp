@@ -70,12 +70,12 @@ include nginx
 
 nginx::resource::server { 'static':
   listen_port => 8080,
-  proxy => 'http://192.168.50.10:80',
+  proxy => 'http://192.168.50.10:8080',
   }
   
 nginx::resource::server { 'dynamic':
   listen_port => 8081,
-  proxy => 'http://192.168.50.15:80',
+  proxy => 'http://192.168.50.15:8081',
   }
   
 }
