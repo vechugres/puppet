@@ -70,7 +70,7 @@ include selinux
 
 include wget
 
- package {'java-18-openjdk':
+ package {'java-17-openjdk':
   ensure => installed,
 }
 
